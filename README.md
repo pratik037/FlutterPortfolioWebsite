@@ -12,3 +12,4 @@ Pre-requisites:
   ```
   4) Go to the ```localhost``` url as given in the terminal with ``` Ctrl + Left Click```
   5) See the magic in front of your eyes.
+  <img src="ss.png">

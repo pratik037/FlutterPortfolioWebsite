@@ -122,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage>
                     .drive(CurveTween(curve: Curves.easeOut)),
               ),
 
-              Text("Made with Love using Flutter <3")
+              Text("Made with Love using Flutter")
             ],
           ),
         ),
