@@ -46,6 +46,49 @@ class _MyHomePageState extends State<MyHomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountEmail: Text(
+                "singhalpratik037@gmail.com",
+                style: TextStyle(fontSize: 17),
+              ),
+              accountName: Text(
+                "Pratik Singhal",
+                style: TextStyle(fontSize: 25),
+              ),
+              decoration: BoxDecoration(
+                color: Colors.red,
+              ),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('images/image.jpg'),
+              ),
+            ),
+            Expanded(
+              child: Column(
+                children: <Widget>[
+                  ListTile(
+                    leading: Icon(Icons.person),
+                    title: Text("About Me"),
+                    onTap: () {},
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.receipt),
+                    title: Text("Projects"),
+                    onTap: () {},
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.work),
+                    title: Text("Work"),
+                    onTap: () {},
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: Text(widget.title),
         actions: <Widget>[
@@ -55,9 +98,10 @@ class _MyHomePageState extends State<MyHomePage>
               child: Center(
                   child: Text(
                 "About Me",
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 18),
               )),
             ),
+            onTap: (){},
           ),
           InkWell(
             child: Padding(
@@ -65,9 +109,10 @@ class _MyHomePageState extends State<MyHomePage>
               child: Center(
                   child: Text(
                 "Projects",
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 18),
               )),
             ),
+            onTap: (){},
           ),
           InkWell(
             child: Padding(
@@ -75,9 +120,10 @@ class _MyHomePageState extends State<MyHomePage>
               child: Center(
                   child: Text(
                 "Work",
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 18),
               )),
             ),
+            onTap: (){},
           )
         ],
       ),
@@ -113,15 +159,16 @@ class _MyHomePageState extends State<MyHomePage>
               ),
               FadeTransition(
                 child: Container(
-                  height: 700,
-                  width: double.infinity,
-                  color: Colors.transparent,
-                  child: Image.asset('images/image.jpg', fit: BoxFit.contain,)
-                ),
+                    height: 700,
+                    width: double.infinity,
+                    color: Colors.transparent,
+                    child: Image.asset(
+                      'images/image.jpg',
+                      fit: BoxFit.contain,
+                    )),
                 opacity: animationController
                     .drive(CurveTween(curve: Curves.easeOut)),
               ),
-
               Text("Made with Love using Flutter")
             ],
           ),
