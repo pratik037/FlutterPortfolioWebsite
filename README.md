@@ -12,4 +12,8 @@ Pre-requisites:
   ```
   4) Go to the ```localhost``` url as given in the terminal with ``` Ctrl + Left Click```
   5) See the magic in front of your eyes.
-  <img src="ss.png">
+  <img src="ss1.png">
+  <img src="ss2.png">
+  <img src="ss3.png">
+  <img src="ss4.png">
+  <img src="ss5.png">
