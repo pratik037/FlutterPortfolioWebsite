@@ -130,10 +130,13 @@ class _MyHomePageState extends State<MyHomePage>
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 16, 16, 4),
-                child: Text(
-                  "Pratik Singhal",
-                  style: TextStyle(fontSize: 55, letterSpacing: 5),
-                ),
+                  child: Text(
+                    "Pratik Singhal",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 55, letterSpacing: 5),
+                  ),
+                  
+                
               ),
               Container(
                 color: Colors.grey,
@@ -153,13 +156,21 @@ class _MyHomePageState extends State<MyHomePage>
                       .drive(CurveTween(curve: Curves.easeOut)),
                 ),
               ),
-              Text(
-                "\nA budding software developer with passion for learning and a knack for developing.",
-                style: TextStyle(fontSize: 25),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "\nA budding software developer with passion for learning and a knack for developing.",
+                  style: TextStyle(fontSize: 25),
+                  textAlign: TextAlign.center,
+                ),
               ),
-              Text(
-                "\nLets Connect? Contact me on anyone of the below social platform\n\n",
-                style: TextStyle(fontSize: 19),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "\nLets Connect? Contact me on anyone of the below social platform\n\n",
+                  style: TextStyle(fontSize: 19),
+                  textAlign: TextAlign.center,
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
