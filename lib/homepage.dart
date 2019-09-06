@@ -1,11 +1,9 @@
 import 'package:flutter_web/material.dart';
-import 'dart:html' as html;
+import 'package:portfolio/aboutMe.dart';
+import 'package:portfolio/widgets/drawer.dart';
+import 'package:portfolio/widgets/socialBtns.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -30,61 +28,10 @@ class _MyHomePageState extends State<MyHomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: Column(
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-              accountEmail: Text(
-                "singhalpratik037@gmail.com",
-                style: TextStyle(fontSize: 17),
-              ),
-              accountName: Text(
-                "Pratik Singhal",
-                style: TextStyle(fontSize: 25),
-              ),
-              decoration: BoxDecoration(
-                color: Colors.teal,
-              ),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('images/img.jpg'),
-              ),
-            ),
-            Expanded(
-              child: Column(
-                children: <Widget>[
-                  ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text(
-                      "About Me",
-                      style: TextStyle(fontSize: 17),
-                    ),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.receipt),
-                    title: Text(
-                      "Projects",
-                      style: TextStyle(fontSize: 17),
-                    ),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.work),
-                    title: Text(
-                      "Work",
-                      style: TextStyle(fontSize: 17),
-                    ),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
+      drawer: Drawwer(),
       appBar: AppBar(
         title: Text(
-          widget.title,
+          "Pratik Singhal.",
           style: TextStyle(letterSpacing: 3),
         ),
         actions: <Widget>[
@@ -97,7 +44,9 @@ class _MyHomePageState extends State<MyHomePage>
                 style: TextStyle(fontSize: 18),
               )),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/about');
+            },
           ),
           InkWell(
             child: Padding(
@@ -130,13 +79,11 @@ class _MyHomePageState extends State<MyHomePage>
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 16, 16, 4),
-                  child: Text(
-                    "Pratik Singhal",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 55, letterSpacing: 5),
-                  ),
-                  
-                
+                child: Text(
+                  "Pratik Singhal",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 55, letterSpacing: 5),
+                ),
               ),
               Container(
                 color: Colors.grey,
@@ -172,69 +119,7 @@ class _MyHomePageState extends State<MyHomePage>
                   textAlign: TextAlign.center,
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  InkWell(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset('iconSocial/fb.png', height: 40),
-                    ),
-                    onTap: () {
-                      html.window.open("https://www.facebook.com/pratik037", "Facebook");
-                    },
-                  ),
-                  InkWell(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset('iconSocial/linkedIn.png', height: 40),
-                    ),
-                    onTap: () {
-                      html.window.open("https://www.linkedin.com/in/pratik037", "Linked In");
-
-                    },
-                  ),
-                  InkWell(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset('iconSocial/twitter.png', height: 40),
-                    ),
-                    onTap: () {
-                      html.window.open("https://www.twitter.com/pratik_037", "Twitter");
-
-                    },
-                  ),
-                  InkWell(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset('iconSocial/google.png', height: 40),
-                    ),
-                    onTap: () {
-                      html.window.open("mailto:singhalpratik037@gmail.com", "Gmail");
-
-                    },
-                  ),
-                  InkWell(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset('iconSocial/github.png', height: 40),
-                    ),
-                    onTap: () {
-                      html.window.open("https://www.github.com/pratik037", "Github");
-
-                    },
-                  ),
-                  InkWell(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset('iconSocial/ig.png', height: 40),
-                    ),
-                    onTap: () {
-                      html.window.open("https://www.instagram.com/pratik037", "Instagram");
-                    },
-                  ),
-                ],
-              ),
+              SocialButtons(),
               FadeTransition(
                 child: Container(
                     // height: 700,

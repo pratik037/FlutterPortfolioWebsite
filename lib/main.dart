@@ -1,5 +1,8 @@
 import 'package:flutter_web/material.dart';
+import 'package:portfolio/aboutMe.dart';
 import 'package:portfolio/homepage.dart';
+import 'package:portfolio/widgets/projects.dart';
+import 'package:portfolio/work.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,11 +12,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Pratik Singhal - Portfolio',
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: MyHomePage(title: 'Pratik Singhal.'),
+      initialRoute: '/',
+      routes: {
+        '/' : (BuildContext context) => MyHomePage(),
+        '/about' : (BuildContext context) => AboutMe(),
+        '/projects' : (BuildContext context) => Projects(),
+        '/work' : (BuildContext context) => Work(),
+      },
     );
   }
 }
